@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<head>
+    <title>Lista Dinâmica</title>
+    <meta charset="UTF-8">
+    <style>
+        div {
+            background-color: #AAAAFF;
+            border: 1px solid blue;
+            padding: 10px;
+        }
+        ol, button, input[type="text"]{
+            font-size: 18px;
+            color: blue;
+        }
+        button{
+            border: 2px  solid blue;
+            border-radius: 30px;
+            padding: 10px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>Lista de Nomes</h1>
+    <hr>
+    <br>
+    <div>
+        Digite um nome<br>
+        <input type="text" id="nome" size="30"><br><br>
+        <button id="botao">Incluir na Lista</button>
+    </div>
+    <br>
+    <div>
+        <ol id="lista">
+
+
+        </ol>
+     </div>
+ </body>
+ 
+ 
+ </html>
+ 
+ 
+ <script>
+     const bt = document.getElementById("botao");
+ 
+ 
+     bt.addEventListener("click", function() {
+         const lst = document.getElementById("lista");
+         const nme = document.getElementById("nome");
+         var valorNome = nme.value;
+         const item = document.createElement("li");
+         item.textContent = valorNome;
+         lst.appendChild(item);
+         nme.value = "";
+         nme.focus();
+     });
+    
+ </script>
+ 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<head>
+    <title>Lista Dinâmica</title>
+    <meta charset="UTF-8">
+    <style>
+        div {
+            background-color: #AAAAFF;
+            border: 1px solid blue;
+            padding: 10px;
+        }
+
+
+        ol,
+        button,
+        select {
+            font-size: 18px;
+            color: blue;
+        }
+
+
+        button {
+            border: 2px solid blue;
+            border-radius: 30px;
+            padding: 10px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>Lista de Nomes</h1>
+    <hr>
+    <br>
+    <div>
+        <select size="1" id="selUF">
+            <option value="">Escolha uma UF</option>
+            <option value="GO">Goiás</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="BA">Bahia</option>
+            <option value="AM">Amazonas</option>
+            <option value="RN">Rio Grande do Norte</option>
+        </select>
+        <br><br>
+        <button id="botao">Listar Distritos</button>
+    </div>
+    <br>
+    <div>
+        <ol id="lista">
+
+
+        </ol>
+    </div>
+</body>
+
+
+</html>
+<script>
+    const bt = document.getElementById("botao");
+
+
+    bt.addEventListener("click", function () {
+
+
+        const uf = document.getElementById("selUF").value;
+        const url = "https://servicodados.ibge.gov.br/api/v1/localidades/estados/" + uf + "/distritos";
+        fetch(url)
+            .then(resposta => {
+                if (resposta.ok) {
+                    return resposta.json();
+                } else {
+                    throw new Error('Erro ao buscar dados do IBGE');
+                }
+            })
+            .then(dados => {
+                const lst = document.getElementById("lista");
+                lst.innerHTML = "";
+                for (const distrito of dados) {
+                    const item = document.createElement("li");
+                    item.textContent = distrito.nome;
+                    lst.appendChild(item);
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+        });
+
+
+</script>
