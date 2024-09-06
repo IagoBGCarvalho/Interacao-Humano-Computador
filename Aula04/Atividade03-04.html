@@ -1,0 +1,62 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 03 da aula 04</title>
+    <style>
+        div {
+            background-color: #AAAAFF;
+            border: 1px solid blue;
+            padding: 10px;
+        }
+        ol, button, input[type="text"]{
+            font-size: 18px;
+            color: blue;
+        }
+        button{
+            border: 2px  solid blue;
+            border-radius: 30px;
+            padding: 10px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Nomes</h1>
+    <hr>
+    <br>
+    <div>
+        Digite um nome<br>
+        <input type="text" id="nome" size="30"><br><br>
+        <button id="botao">Incluir na Lista</button>
+        <button id="botaoRemover">Remover</button>
+    </div>
+    <br>
+    <div>
+        <ol id="lista">
+        </ol>
+     </div>
+ </body>
+ </html>
+ 
+ <script>
+     const bt = document.getElementById("botao");
+     const btRemover = document.getElementById("botaoRemover");
+ 
+     bt.addEventListener("click", function() {
+         const lst = document.getElementById("lista");
+         const nme = document.getElementById("nome");
+         var valorNome = nme.value;
+         const item = document.createElement("li");
+         item.textContent = valorNome;
+         lst.appendChild(item);
+     });
+
+     btRemover.addEventListener("click", function() {
+        const lst = document.getElementById("lista");
+        if (lst.lastChild) { 
+            lst.removeChild(lst.lastChild);
+        }
+    });
+ </script>
+ 
