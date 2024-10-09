@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <style>
+        .cab { grid-area: cab; }
+        .menu { grid-area: menu; }
+        .conteudo { grid-area: conteudo; }
+        .rodape {grid-area: rodape; }
+        .prop {grid-area: prop}
+
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+            'cab cab cab cab cab cab'
+            'menu conteudo conteudo conteudo conteudo prop'
+            "rodape rodape rodape rodape rodape rodape";
+            background-color: darkkhaki;
+            padding: 10px;
+        }
+
+
+        .grid-container > div {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <h1>Layout em GRID</h1>
+
+
+
+
+    <div class="grid-container">
+        <div class="cab">Cabeçalho</div>
+        <div class="menu">Menu</div>
+        <div class="conteudo">
+            <p>Conteúdo</p>
+            <p>Conteúdo</p>
+            <p>Conteúdo</p>
+            <p>Conteúdo</p>
+            <p>Conteúdo</p>
+            <p>Conteúdo</p>
+            <p>Conteúdo</p></div>
+            <div class="rodape">Meu rodapé</div>
+            <div class="prop">Propaganda</div>
+    </div>
+
+
+</body>
+
+
+</html>
