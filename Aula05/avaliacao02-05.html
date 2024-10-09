@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="html, busca">
+    <title>Avaliação 02 da aula 05</title>
+    <style>
+        #iframe {
+            margin-top: 20px;
+            width: 100%;
+            height: 1200px;
+            border: 1px solid #ccc;
+        }
+        #url {
+            width: 70%;
+            padding: 20px;
+            margin-right: 20px;
+            box-sizing: border-box;
+        }
+        #botao {
+            padding: 20px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <label for="url">Digite o endereço:</label>
+    <input type="text" id="url" placeholder="https://www.example.com">
+    <button id="botao">Abrir</button>
+
+    <iframe id="iframe"></iframe>
+
+    <script>
+        document.getElementById('botao').addEventListener('click', function() {
+            var url = document.getElementById('url').value;
+            var iframe = document.getElementById('iframe');
+            iframe.src = url;
+        });
+    </script>
+</body>
+</html>
