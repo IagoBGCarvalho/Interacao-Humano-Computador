@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+        .left {
+            background-color: lightsalmon;
+            padding: 20px;
+            float: left;
+            width: 20%;
+            /* 20% por padrão */
+        }
+
+
+        .main {
+            background-color: lightslategray;
+            padding: 20px;
+            float: left;
+            width: 60%;
+            /*  60% por padrão */
+        }
+
+
+        .right {
+            background-color: lightgreen;
+            padding: 20px;
+            float: left;
+            width: 20%;
+            /* 20% por padrão */
+        }
+
+
+        /* Utilize media para ter um ponto mínimo para trocar os tamanhos */
+        @media screen and (max-width: 700px) {
+
+
+            .left,
+            .main,
+            .right {
+                width: 100%;
+                /*  100% (linha toda se acalçar menos que 700px)  */
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <h2>Exemplo com Media</h2>
+    <hr>
+    <p>Altere a largura do seu browser para testar</p>
+
+
+    <p>Quando chegar 700px verá uma mudança</p>
+
+
+    <div class="left">
+        <p>Menu da esquerda</p>
+    </div>
+
+
+    <div class="main">
+        <p>Conteúdo Principal</p>
+    </div>
+
+
+    <div class="right">
+        <p>Conteúdo da Direita</p>
+    </div>
+
+
+</body>
+
+
+</html>

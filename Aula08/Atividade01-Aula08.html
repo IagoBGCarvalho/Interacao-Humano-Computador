@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade 01 da aula 08</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #3c3c3c;
+    }
+
+    .header {
+      background-color: #c0c080;
+      color: #b22222;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 15% 65% 20%;
+      grid-gap: 10px;
+      margin: 20px;
+    }
+
+    .menu {
+      background-color: #c0c080;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .menuitem {
+      background-color: #c0c080;
+      color: #3c3c3c;
+      padding: 15px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: underline;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .menuitem:hover {
+      text-decoration: none;
+    }
+
+    .main {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .main h2 {
+      color: #b22222;
+      margin-bottom: 15px;
+    }
+
+    .main p {
+      color: #b22222;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .right {
+      background-color: #c0c080;
+      padding: 20px;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .right h2 {
+      color: #b22222;
+      margin-bottom: 10px;
+    }
+
+    .right p {
+      color: #b22222;
+      line-height: 1.6;
+    }
+
+    .footer {
+      background-color: #c0c080;
+      color: #b22222;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+      font-size: 12px;
+    }
+
+    @media only screen and (max-width: 800px) {
+      .container {
+        grid-template-columns: 30% 70%;
+      }
+
+      .menuitem {
+        text-align: center;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      .container {
+        grid-template-columns: 100%;
+      }
+
+      .menu,
+      .main,
+      .right {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      .menuitem {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Exercício do Tutorial 08</h1>
+  </div>
+
+  <div class="container">
+    <div class="menu">
+      <div class="menuitem">Primeira Opção</div>
+      <div class="menuitem">Segunda Opção</div>
+      <div class="menuitem">Terceira Opção</div>
+      <div class="menuitem">Quarta Opção</div>
+    </div>
+
+    <div class="main">
+      <h2>Título para o conteúdo</h2>
+      <p>"Acordo pra trabalhar, eu dou pra trabalhar, tô pra trabalhar"</p>
+      <p>"Não tenho tempo de ter o tempo livre de ser nada"</p>
+      <p>"Eu não vejo além da fumaça que passa por aqui"</p>
+      <p>"Eu não vejo além disso tudo o amor e as coisas lindas"</p>
+      <p>"A vida é só trabalhar duro e morrer?"</p>
+    </div>
+
+    <div class="right">
+      <h2>Sobre</h2>
+      <p>A música é um alerta para os perigos da alienação e da exploração do homem no trabalho.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© registro de marca</p>
+  </div>
+</body>
+
+</html>
