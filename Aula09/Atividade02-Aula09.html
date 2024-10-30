@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 02 da aula 09</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: purple;
+            text-align: center;
+        }
+        .container {
+            width: 300px;
+            margin: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        table, th, td {
+            border: 1px solid purple;
+        }
+        th, td {
+            padding: 8px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+        button {
+            padding: 8px 16px;
+            margin: 5px;
+            font-size: 14px;
+        }
+        input[readonly] {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Notas x Pesos</h1>
+    <div class="container">
+        <form id="notasForm">
+            <table>
+                <tr>
+                    <th>Ordem</th>
+                    <th>Nota</th>
+                    <th>Peso</th>
+                </tr>
+                <tr>
+                    <td>Primeira Nota</td>
+                    <td><input type="number" id="nota1" min="0" max="10" required></td>
+                    <td><input type="number" id="peso1" min="1" required></td>
+                </tr>
+                <tr>
+                    <td>Segunda Nota</td>
+                    <td><input type="number" id="nota2" min="0" max="10" required></td>
+                    <td><input type="number" id="peso2" min="1" required></td>
+                </tr>
+                <tr>
+                    <td>Terceira Nota</td>
+                    <td><input type="number" id="nota3" min="0" max="10" required></td>
+                    <td><input type="number" id="peso3" min="1" required></td>
+                </tr>
+                <tr>
+                    <td>Média/Menção</td>
+                    <td><input type="text" id="media" readonly></td>
+                    <td><input type="text" id="mencao" readonly></td>
+                </tr>
+            </table>
+            <div class="btn-container">
+                <button type="submit">Processar</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById("notasForm").onsubmit = function(event) {
+            event.preventDefault();
+            
+            const nota1 = parseFloat(document.getElementById("nota1").value);
+            const nota2 = parseFloat(document.getElementById("nota2").value);
+            const nota3 = parseFloat(document.getElementById("nota3").value);
+            const peso1 = parseFloat(document.getElementById("peso1").value);
+            const peso2 = parseFloat(document.getElementById("peso2").value);
+            const peso3 = parseFloat(document.getElementById("peso3").value);
+        
+            const totalPeso = peso1 + peso2 + peso3;
+            const mediaPonderada = ((nota1 * peso1) + (nota2 * peso2) + (nota3 * peso3)) / totalPeso;
+            
+            let mencao;
+            if (mediaPonderada >= 9) {
+                mencao = "SS";
+            } else if (mediaPonderada >= 7) {
+                mencao = "MS";
+            } else if (mediaPonderada >= 5) {
+                mencao = "MM";
+            } else {
+                mencao = "MI";
+            }
+            
+            document.getElementById("media").value = mediaPonderada.toFixed(2);
+            document.getElementById("mencao").value = mencao;
+        };
+    </script>
+</body>
+</html>

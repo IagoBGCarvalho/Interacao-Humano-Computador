@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <title>Atividade 01 da aula 09</title>
+</head>
+<body>
+   <h2>Form de Login</h2>
+   <form id="frm" action="#">
+       <label for="usr">Usuário:</label><br>
+       <input type="text" id="usr" name="usuario" value="" placeholder="Nome do usuário"><br>
+       <label for="pwd">Senha:</label><br>
+       <input type="password" id="pwd" name="senha" value=""><br><br>
+       <button type="submit">Enviar Dados</button>
+       <button type="reset">Limpar</button>
+   </form>
+</body>
+</html>
+
+<script>
+   const form = document.getElementById("frm");
+
+   function validarLogin() {
+       const usuario = document.getElementById("usr").value;
+       const senha = document.getElementById("pwd").value;
+
+       if (!usuario || !senha) {
+           alert("Por favor, preencha todos os campos.");
+           return false;
+       }
+
+       if (usuario === "admin" && senha === "123") {
+           alert("Login aceito");
+       } else {
+           alert("Login inválido");
+       }
+   }
+
+   form.addEventListener('submit', function(event) {
+       event.preventDefault();
+       validarLogin();         
+   });
+</script>

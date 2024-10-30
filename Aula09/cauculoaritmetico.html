@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Form para Operações Aritméticas</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Cálculos Aritméticos</h1>
+    <hr>
+
+    <form id="frm" action="#">
+        <label for="num1">Primeiro Número:</label><br>
+        <input type="text" id="num1" name="num1" value="" placeholder="Digite o primeiro número"><br>
+        <label for="num2">Segunda Número:</label><br>
+        <input type="text" id="num2" name="num2" value="" placeholder="Digite o segundo número"><br><br>
+        <button type="submit">Calcular</button>
+        <button type="reset">Limpar</button>
+    </form>
+
+</body>
+</html>
+<script>
+    function calcular() {
+        const n1 = parseFloat(document.getElementById("num1").value);
+        const n2 = parseFloat(document.getElementById("num2").value);
+        const soma = n1 + n2;
+        const sub = n1 - n2;
+        const mult = n1 * n2;
+        const divd = n1 / n2;
+
+        console.log(">>> Dados dos calculos");
+        console.log("{n1} + {n2} = {soma}".replace("{n1}", n1).replace("{n2}", n2).replace("{soma}", soma));
+        console.log("{n1} - {n2} = {sub}".replace("{n1}", n1).replace("{n2}", n2).replace("{sub}", sub));
+        console.log("{n1} x {n2} = {mult}".replace("{n1}", n1).replace("{n2}", n2).replace("{mult}", mult));
+        console.log("{n1} {simb} {n2} = {divd}".replace("{n1}", n1).replace("{n2}", n2).replace("{simb}", String.fromCharCode(247)).replace("{divd}", divd));
+   }
+   
+    f = document.getElementById("frm");
+    f.addEventListener('submit', function (event) {
+        event.preventDefault();
+        calcular();
+    });
+</script>

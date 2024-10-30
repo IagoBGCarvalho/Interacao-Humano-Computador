@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Form para Strings</title>
+    <style>
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+
+
+
+
+        div {
+            border: 1px solid blue;
+            background-color: lightblue;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Strings</h1>
+    <hr>
+    <form id="frm" action="#">
+        <label for="frase">Informe uma frase:</label><br>
+        <input type="text" id="frase" name="frase" value="" placeholder="Digite uma frase qualquer" size="50" required><br><br>
+        <button type="submit">Processar</button>
+        <button type="reset">Limpar</button>
+    </form>
+    <br><br>
+    <div>
+        <p>
+            <label for="resInverso">Frase ao inverso:</label><br>
+            <input type="text" id="resInverso" name="resInverso" value="" size="50" readonly>
+        </p>
+        <p>
+            <label for="resMult">Frase com caracteres multiplicados:</label><br>
+            <textarea rows="4" cols="50" id="resMult" name="resMult"></textarea>          
+        </p>
+        <p>
+            <label for="usr">Frase Criptografada:</label><br>
+            <input type="text" id="resCripto" name="resCripto" value="" size="50" readonly>
+        </p>
+    </div>
+</body>
+</html>
+<script>
+    function inverso(texto) {
+        saida = "";
+        for (i = texto.length-1; i > -1; i--){
+            saida += texto[i];
+        }
+
+        txtInv = document.getElementById("resInverso")
+        txtInv.value = saida;
+    }
+
+    function multCar(texto) {
+        saida = "";
+        for (i = 0 ; i < texto.length; i++){
+            for (j=-1; j < i; j++){
+                saida += texto[i];
+            }
+        }
+
+        txtMult = document.getElementById("resMult")
+        txtMult.value = saida;
+    }
+
+    function cripto(texto) {
+        saida = "";
+        for (i = 0 ; i < texto.length; i++){
+            cod = texto.charCodeAt(i) + 1;
+            saida += String.fromCharCode(cod);
+        }
+
+        txtCripto = document.getElementById("resCripto")
+        txtCripto.value = saida;
+    }
+
+    f = document.getElementById("frm");
+    f.addEventListener('submit', function (event) {
+        event.preventDefault();
+        texto = document.getElementById("frase").value;
+        inverso(texto);
+        multCar(texto);
+        cripto(texto);
+    });
+</script>

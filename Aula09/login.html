@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Form de Login</title>
+</head>
+<body>
+    <h2>Form de Login</h2>
+    <form id="frm" action="#">
+        <label for="usr">Usuário:</label><br>
+        <input type="text" id="usr" name="usuario" value="" placeholder="Nome do usuário"><br>
+        <label for="pwd">Senha:</label><br>
+        <input type="password" id="pwd" name="senha" value=""><br><br>
+        <button type="submit">Enviar Dados</button>
+        <button type="reset">Limpar</button>
+    </form>
+</body>
+</html>
+<script>
+    f = document.getElementById("frm");
+    function obterDados() {
+        const inputs = f.querySelectorAll("input");
+
+        const dados = [];
+
+        for (const input of inputs) {
+            dados.push({
+                nome: input.name,
+                valor: input.value,
+            });
+        }  
+        return dados;
+    }
+    f.addEventListener('submit', function (event) {
+        event.preventDefault();
+        console.log(obterDados());
+    });
+</script>
