@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Animação de Círculo</title>
+</head>
+<body>
+    <svg width="400" height="300" viewBox="0 0 400 300">
+        <circle id="circle" cx="200" cy="150" r="50" fill="none" stroke="blue" stroke-width="10" />
+    </svg>
+</body>
+</html>
+<script>
+    const circle = document.getElementById('circle');
+    const animation = circle.animate([
+        { stroke: "blue", strokeWidth: 10 }, // Começa azul com borda grossa
+        { stroke: "green", strokeWidth: 20 }, // Muda para verde com borda mais grossa
+        { stroke: "red", strokeWidth: 10 }, // Muda para vermelho com borda fina
+        { stroke: "blue", strokeWidth: 20 } // Volta para vermelho com borda grossa
+    ], {
+        duration: 3000, // Duração total da animação em milissegundos
+        iterations: Infinity
+    });
+</script>

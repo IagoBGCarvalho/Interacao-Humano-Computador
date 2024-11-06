@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quinhetos Círculos randômicos</title>
+    <script>
+        document.addEventListener("readystatechange", function () {
+            for (var contar = 1; contar < 501; contar++) {
+                var c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                c.setAttribute("cx", Math.random()*1000);
+                c.setAttribute("cy", Math.random()*1000);
+                c.setAttribute("r", contar * (Math.random()*50));
+                var red = Math.random()*255;
+                var green = Math.random()*255;
+                var blue = Math.random()*255;
+                c.setAttribute("stroke", "rgb(" + red + "," + green + "," + blue + ")");
+                c.setAttribute("stroke-width", 1);
+                c.setAttribute("fill", "none");
+                document.getElementById("desenho").appendChild(c);              
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>Temos agora 500 círculos criados de forma dinâmica</h1>
+    <hr />
+    <svg id="desenho" width="1000" height="1000">
+    </svg>
+</body>
+</html>

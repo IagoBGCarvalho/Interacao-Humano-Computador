@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 02 da aula 10</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Temos agora 50 retângulos criados de forma dinâmica</h1>
+    <hr />
+    <svg id="desenho" width="600" height="400"></svg>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const svg = document.getElementById("desenho");
+            for (let i = 0; i < 50; i++) {
+                const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                rect.setAttribute("x", 50 + i * 5);
+                rect.setAttribute("y", 50 + i * 2);
+                rect.setAttribute("width", 75);
+                rect.setAttribute("height", 65);
+                rect.setAttribute("rx", 10);
+                rect.setAttribute("ry", 10);
+                rect.setAttribute("fill", "none");
+                rect.setAttribute("stroke", "orange");
+                rect.setAttribute("stroke-width", 2);
+                svg.appendChild(rect);
+            }
+        });
+    </script>
+</body>
+</html>

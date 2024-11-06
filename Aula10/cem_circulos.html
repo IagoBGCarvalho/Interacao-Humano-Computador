@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cem Círculos</title>
+    <script>
+        document.addEventListener("readystatechange", function () {
+            for (var contar = 1; contar < 101; contar++) {
+                var c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                c.setAttribute("cx", 300);
+                c.setAttribute("cy", 300);
+                c.setAttribute("r", contar * 3);
+                c.setAttribute("stroke", "blue");
+                c.setAttribute("stroke-width", 1);
+                c.setAttribute("fill", "none");
+                document.getElementById("desenho").appendChild(c);              
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>Temos agora 100 círculos criados de forma dinâmica</h1>
+    <hr />
+    <svg id="desenho" width="600" height="600">
+    </svg>
+</body>
+</html>
